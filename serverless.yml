@@ -1,0 +1,24 @@
+service: suffbot
+# app and org for use with dashboard.serverless.com
+#app: your-app-name
+#org: your-org-name
+
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: python3.8
+  memorySize: 128
+  versionFunctions: false
+  lambdaHashingVersion: 20201221
+
+  #  stage: dev
+  region: eu-central-1
+
+functions:
+  welcome:
+    handler: handler.handle_message
+    events:
+      - httpApi:
+          path: /MTQ1MDczMDE5MDpBQUh0U2l3eENIVHNER0xGcU1WdjREYkJQNjVpbDFaYzVSbw
+          method: post
