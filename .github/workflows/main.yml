@@ -2,7 +2,7 @@ name: Main
 on: [push]
 
 jobs:
-  push_docker:
+  deploy:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     steps:
