@@ -9,7 +9,7 @@ _FILE_IDS = [
     # Trinken
     "CQACAgIAAxkDAAMIYAQ-CYlzFAABOG5HIV4Z52M2pOpsAAKYCgACFUogSOiJTDCf_HlXHgQ",
     # Aktuelle Situation
-    "CQACAgIAAxkDAAMnYBGy7xpSrNxeVGqU-hKkmvKVQVoAAlcLAAKJO4hIuBttZLzEECYeBA"
+    "CQACAgIAAxkDAAMnYBGy7xpSrNxeVGqU-hKkmvKVQVoAAlcLAAKJO4hIuBttZLzEECYeBA",
 ]
 
 
@@ -24,6 +24,11 @@ def handle_message(event, context):
 
     if not new_users:
         print("No new users")
+
+        audio = message.get('audio')
+        if audio:
+            print(f"Audio file ID {audio['file_id']}")
+
         return {
             'statusCode': 204
         }
