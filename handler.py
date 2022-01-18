@@ -10,6 +10,8 @@ _FILE_IDS = [
     "CQACAgIAAxkDAAMIYAQ-CYlzFAABOG5HIV4Z52M2pOpsAAKYCgACFUogSOiJTDCf_HlXHgQ",
     # Aktuelle Situation
     "CQACAgIAAxkDAAMnYBGy7xpSrNxeVGqU-hKkmvKVQVoAAlcLAAKJO4hIuBttZLzEECYeBA",
+    # Komasaufen
+    "CQACAgIAAxkBAANZYeaJDEyC6yYa1Qe8RYxfyawvb_IAAmoWAAItbjBLXvJA_jHnjIkjBA",
 ]
 
 
