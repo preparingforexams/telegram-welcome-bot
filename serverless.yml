@@ -7,7 +7,7 @@ frameworkVersion: "2"
 
 provider:
   name: aws
-  runtime: python3.8
+  runtime: python3.9
   memorySize: 128
   versionFunctions: false
   lambdaHashingVersion: 20201221
