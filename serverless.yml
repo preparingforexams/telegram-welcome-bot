@@ -3,7 +3,7 @@ service: suffbot
 #app: your-app-name
 #org: your-org-name
 
-frameworkVersion: "2"
+frameworkVersion: "3"
 
 provider:
   name: aws
