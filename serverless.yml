@@ -10,7 +10,6 @@ provider:
   runtime: python3.9
   memorySize: 128
   versionFunctions: false
-  lambdaHashingVersion: 20201221
 
   #  stage: dev
   region: eu-central-1
