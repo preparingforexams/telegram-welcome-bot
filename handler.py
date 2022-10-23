@@ -43,7 +43,10 @@ def handle_message(event, context):
     }
 
     if len(new_users) == 1:
-        username = new_users[0]['first_name']
+        user = new_users[0]
+        username = user['first_name']
+        if user['id'] == 1365395775:
+            username = 'Katerine'
         body['reply_to_message_id'] = message_id
         body['allow_sending_without_reply'] = True
     else:
