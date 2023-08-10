@@ -1,5 +1,13 @@
-.serverless/
-.vscode/
+# Files and directories created by conventional Python tools.
+__pycache__
+.venv
+venv
+.mypy_cache/
+.pytest_cache/
+
+# IntelliJ IDEA
 .idea/
-*.iml
-.venv/
+
+.env*
+
+.tool-versions

@@ -1,0 +1,29 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: welcome-update-handler
+spec:
+  clusterIP: None
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: welcome-update-handler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: update-handler
+  serviceName: update-handler
+  template:
+    metadata:
+      labels:
+        app: update-handler
+    spec:
+      containers:
+        - name: app
+          image: {{ .Values.image.app }}
+          envFrom:
+            - secretRef:
+                name: welcome-secrets
