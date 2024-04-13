@@ -1,4 +1,0 @@
-image:
-  app: ${IMAGE_NAME}:${GITHUB_SHA}
-telegram:
-  apiKey: ${TELEGRAM_TOKEN}
