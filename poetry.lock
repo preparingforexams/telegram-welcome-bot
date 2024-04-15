@@ -309,13 +309,13 @@ testing = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygm
 
 [[package]]
 name = "python-telegram-bot"
-version = "21.1"
+version = "21.1.1"
 description = "We have made you a wrapper you can't refuse"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "python-telegram-bot-21.1.tar.gz", hash = "sha256:e42d5cfec69d64fd921a41ff56215f92a48b8ddb5500235798c2bd3d9eb7242e"},
-    {file = "python_telegram_bot-21.1-py3-none-any.whl", hash = "sha256:72e27445633a6339eacd2a9ebecec1eeb44b627056f84c2c2b907b448860cb62"},
+    {file = "python-telegram-bot-21.1.1.tar.gz", hash = "sha256:5fd21710902270f5946c6a484918227b361b8119e1dadae6b3dd7fcee3b1a74e"},
+    {file = "python_telegram_bot-21.1.1-py3-none-any.whl", hash = "sha256:dded93d733585a37b382fd5e088faffc37c3ae6d2bd4052d105d9a40f8a0152a"},
 ]
 
 [package.dependencies]
@@ -461,4 +461,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.12"
-content-hash = "0d5fe6f8606edbcd08044d469a80ecdba8b546d2a4e2c2adb8e665d96bbd0e45"
+content-hash = "e7aca0bb15e6aa39c0f9544abefb1536751b170f44492eefc54ab7dcb1b15bbf"
