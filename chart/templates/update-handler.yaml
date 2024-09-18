@@ -11,6 +11,7 @@ kind: StatefulSet
 metadata:
   name: welcome-update-handler
 spec:
+  revisionHistoryLimit: 2
   replicas: 1
   selector:
     matchLabels:
