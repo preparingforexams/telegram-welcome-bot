@@ -11,7 +11,7 @@ packages = [{ from = "src", include = "app" }]
 
 [tool.poetry.dependencies]
 certifi = "2024.8.30"
-python = "~3.12"
+python = "~3.13"
 python-telegram-bot = "21.6"
 sentry-sdk = "^2.0.0"
 
