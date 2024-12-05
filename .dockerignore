@@ -1,4 +1,12 @@
-.git
-.venv/
+.*/
 
+.editorconfig
+.env
 .envrc
+.gitignore
+.mise.toml
+
+Dockerfile
+renovate.json
+
+chart/
