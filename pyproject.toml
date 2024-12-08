@@ -10,7 +10,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "python-telegram-bot ==21.8",
+    "python-telegram-bot ==21.9",
     "sentry-sdk >=2.0.0, <3.0.0",
 ]
 
