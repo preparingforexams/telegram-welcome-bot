@@ -11,7 +11,7 @@ kind: StatefulSet
 metadata:
   name: welcome-update-handler
 spec:
-  revisionHistoryLimit: 2
+  revisionHistoryLimit: 0
   replicas: 1
   selector:
     matchLabels:
@@ -22,9 +22,24 @@ spec:
       labels:
         app: update-handler
     spec:
+      automountServiceAccountToken: false
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
+        runAsNonRoot: true
       containers:
         - name: app
           image: {{ .Values.image.app }}:{{ .Values.appVersion }}
           envFrom:
             - secretRef:
                 name: welcome-secrets
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: [ALL]
+          resources:
+            requests:
+              cpu: 10m
+              memory: 64Mi
+            limits:
+              cpu: 200m
