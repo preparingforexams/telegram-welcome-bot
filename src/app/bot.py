@@ -28,14 +28,21 @@ class Bot:
         self.telegram_token = telegram_token
 
     def run(self) -> None:
-        app = Application.builder().token(self.telegram_token).build()
+        app = (
+            Application.builder()
+            .get_updates_read_timeout(5)
+            .token(self.telegram_token)
+            .build()
+        )
         app.add_handler(
             ChatMemberHandler(
                 self._handle_chat_member,
                 ChatMemberHandler.CHAT_MEMBER,
             )
         )
-        app.run_polling(read_timeout=5, allowed_updates=[Update.CHAT_MEMBER])
+        app.run_polling(
+            allowed_updates=[Update.CHAT_MEMBER],
+        )
 
     async def _handle_chat_member(self, update: Update, _: Any) -> None:
         chat_member = update.chat_member
