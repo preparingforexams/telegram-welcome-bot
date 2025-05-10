@@ -1,9 +1,10 @@
-import os
 import random
 from typing import Any
 
 from telegram import Update
 from telegram.ext import Application, ChatMemberHandler
+
+from app.config import TelegramConfig
 
 _FILE_IDS = [
     # Saufen
@@ -20,12 +21,8 @@ _FILE_IDS = [
 
 
 class Bot:
-    def __init__(self) -> None:
-        telegram_token = os.getenv("TELEGRAM_TOKEN")
-        if not telegram_token:
-            raise ValueError("TELEGRAM_TOKEN is missing")
-
-        self.telegram_token = telegram_token
+    def __init__(self, config: TelegramConfig) -> None:
+        self.telegram_token = config.token
 
     def run(self) -> None:
         app = (

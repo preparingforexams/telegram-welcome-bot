@@ -10,6 +10,7 @@ classifiers = [
 ]
 
 dependencies = [
+    "bs-config [dotenv] ==1.1.1",
     "python-telegram-bot ==22.0",
     "sentry-sdk >=2.0.0, <3.0.0",
 ]
@@ -21,6 +22,14 @@ dev = [
     "ruff ==0.11.9",
     "types-requests >=2.31",
 ]
+
+[[tool.uv.index]]
+name = "internal"
+url = "https://pypi.bjoernpetersen.net"
+explicit = true
+
+[tool.uv.sources]
+bs-config = { index = "internal" }
 
 [tool.uv.workspace]
 exclude = ["src/tests"]
