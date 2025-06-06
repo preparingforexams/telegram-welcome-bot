@@ -1,6 +1,8 @@
+import asyncio
 import logging
 
 import sentry_sdk
+import uvloop
 from bs_config import Env
 
 from app.bot import Bot
@@ -29,6 +31,8 @@ def _setup_sentry(config: SentryConfig) -> None:
 
 
 def main() -> None:
+    asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
+
     _setup_logging()
     env = Env.load(include_default_dotenv=True)
     config = Config.from_env(env)
