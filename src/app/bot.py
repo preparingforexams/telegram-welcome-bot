@@ -1,6 +1,7 @@
 import random
 from typing import Any
 
+from bs_nats_updater import NatsConfig, create_updater
 from telegram import Update
 from telegram.ext import Application, ChatMemberHandler
 
@@ -21,14 +22,18 @@ _FILE_IDS = [
 
 
 class Bot:
-    def __init__(self, config: TelegramConfig) -> None:
-        self.telegram_token = config.token
+    def __init__(
+        self,
+        config: TelegramConfig,
+        nats_config: NatsConfig,
+    ) -> None:
+        self.__nats_config = nats_config
+        self.__telegram_token = config.token
 
     def run(self) -> None:
         app = (
             Application.builder()
-            .get_updates_read_timeout(5)
-            .token(self.telegram_token)
+            .updater(create_updater(self.__telegram_token, self.__nats_config))
             .build()
         )
         app.add_handler(

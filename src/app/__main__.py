@@ -38,7 +38,7 @@ def main() -> None:
     config = Config.from_env(env)
     _setup_sentry(config.sentry)
 
-    bot = Bot(config.telegram)
+    bot = Bot(config.telegram, config.nats)
     bot.run()
 
 
