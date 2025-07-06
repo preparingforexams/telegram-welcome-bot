@@ -4,6 +4,7 @@ description = "Greets alcoholics"
 version = "1.0.0"
 authors = [{ name = "BlindfoldedSurgery", email = "team@blindfolded.surgery" }]
 requires-python = "==3.13.*"
+license-files = ["LICENSE"]
 classifiers = [
     "Private :: Do Not Upload",
     "License :: OSI Approved :: MIT License",
@@ -37,8 +38,8 @@ bs-nats-updater = { index = "internal" }
 exclude = ["src/tests"]
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["uv_build==0.7.*"]
+build-backend = "uv_build"
 
 [tool.mypy]
 strict = true
