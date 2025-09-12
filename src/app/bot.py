@@ -48,7 +48,7 @@ class Bot:
             stop_signals=[
                 signal.SIGTERM,
                 signal.SIGINT,
-            ]
+            ],
         )
 
     async def _handle_chat_member(self, update: Update, _: Any) -> None:
