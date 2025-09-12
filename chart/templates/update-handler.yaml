@@ -1,22 +1,13 @@
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: welcome-update-handler
-spec:
-  clusterIP: None
----
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: welcome-update-handler
 spec:
   revisionHistoryLimit: 0
-  replicas: 1
   selector:
     matchLabels:
       app: update-handler
-  serviceName: update-handler
   template:
     metadata:
       labels:
@@ -39,7 +30,25 @@ spec:
               drop: [ALL]
           resources:
             requests:
-              cpu: 10m
-              memory: 64Mi
+              cpu: 500m
+              memory: 128Mi
             limits:
-              cpu: 200m
+              cpu: 500m
+              memory: 128Mi
+---
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: bob
+spec:
+  maxReplicaCount: 1
+  minReplicaCount: 0
+  scaleTargetRef:
+    name: welcome-update-handler
+  triggers:
+    - type: nats-jetstream
+      metadata:
+        natsServerMonitoringEndpoint: "nats-headless.nats-system.svc.cluster.local:8222"
+        account: "$G"
+        stream: "telegram-updates"
+        consumer: "welcome-bot"

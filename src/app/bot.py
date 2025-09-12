@@ -1,4 +1,5 @@
 import random
+import signal
 from typing import Any
 
 from bs_nats_updater import NatsConfig, create_updater
@@ -44,6 +45,10 @@ class Bot:
         )
         app.run_polling(
             allowed_updates=[Update.CHAT_MEMBER],
+            stop_signals=[
+                signal.SIGTERM,
+                signal.SIGINT,
+            ]
         )
 
     async def _handle_chat_member(self, update: Update, _: Any) -> None:
