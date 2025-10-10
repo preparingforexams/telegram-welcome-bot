@@ -3,7 +3,7 @@ name = "app"
 description = "Greets alcoholics"
 version = "1.0.0"
 authors = [{ name = "BlindfoldedSurgery", email = "team@blindfolded.surgery" }]
-requires-python = "==3.13.*"
+requires-python = "==3.14.*"
 license-files = ["LICENSE"]
 classifiers = [
     "Private :: Do Not Upload",
