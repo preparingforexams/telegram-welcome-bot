@@ -1,12 +1,13 @@
 import random
 import signal
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from bs_nats_updater import NatsConfig, create_updater
 from telegram import Update
 from telegram.ext import Application, ChatMemberHandler
 
-from app.config import TelegramConfig
+if TYPE_CHECKING:
+    from app.config import TelegramConfig
 
 _FILE_IDS = [
     # Saufen
