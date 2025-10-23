@@ -15,8 +15,8 @@ class SentryConfig:
     @classmethod
     def from_env(cls, env: Env) -> Self:
         return cls(
-            dsn=env.get_string("SENTRY_DSN"),
-            release=env.get_string("APP_VERSION", default="debug"),
+            dsn=env.get_string("sentry-dsn"),
+            release=env.get_string("app-version", default="debug"),
         )
 
 
@@ -27,7 +27,7 @@ class TelegramConfig:
     @classmethod
     def from_env(cls, env: Env) -> Self:
         return cls(
-            token=env.get_string("TOKEN", required=True),
+            token=env.get_string("token", required=True),
         )
 
 
@@ -40,7 +40,7 @@ class Config:
     @classmethod
     def from_env(cls, env: Env) -> Self:
         return cls(
-            nats=NatsConfig.from_env(env.scoped("NATS_")),
+            nats=NatsConfig.from_env(env / "nats"),
             sentry=SentryConfig.from_env(env),
-            telegram=TelegramConfig.from_env(env.scoped("TELEGRAM_")),
+            telegram=TelegramConfig.from_env(env / "telegram"),
         )

@@ -5,14 +5,14 @@ version = "1.0.0"
 authors = [{ name = "BlindfoldedSurgery", email = "team@blindfolded.surgery" }]
 requires-python = "==3.14.*"
 license-files = ["LICENSE"]
+license = "MIT"
 classifiers = [
     "Private :: Do Not Upload",
-    "License :: OSI Approved :: MIT License",
 ]
 
 dependencies = [
-    "bs-config [dotenv] ==1.2.0",
-    "bs-nats-updater ==2.1.2",
+    "bs-config [dotenv] ==3.0.0",
+    "bs-nats-updater ==3.0.0",
     "python-telegram-bot ==22.5",
     "sentry-sdk >=2.0.0, <3.0.0",
     "uvloop ==0.22.*",
